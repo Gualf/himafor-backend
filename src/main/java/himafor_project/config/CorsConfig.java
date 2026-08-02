@@ -12,7 +12,7 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins(
                         "http://localhost:3000", // Izin untuk testing di laptop
-                        "https://himafor-frontend.vercel.app" // Izin khusus Vercel kamu
+                        "https://himafor-frontend.vercel.app", // Izin khusus Vercel kamu
                         "https://himafor-frontend-r2rpuoznc-kelompok-19.vercel.app" // Tambahkan link Vercel utama kamu di sini jika nanti linknya berubah
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
