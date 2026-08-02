@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import java.util.List;
 
-/**
- * DTO Response untuk Halaman Struktur Organisasi Publik.
- */
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,10 +12,13 @@ import java.util.List;
 public class PublicOrganizationResponse {
 
     private LeaderInfo chairman;
-
+    
     @JsonProperty("vice_chairman")
     private LeaderInfo viceChairman;
-
+    
+    private List<LeaderInfo> secretaries;
+    private List<LeaderInfo> treasurers;
+    
     private List<DepartmentInfo> departments;
 
     @Getter
@@ -41,8 +41,15 @@ public class PublicOrganizationResponse {
         @JsonProperty("department_name")
         private String departmentName;
         private String head;
+        private String headPhoto; 
 
         @JsonProperty("members_count")
         private Integer membersCount;
+        
+        // VARIABEL BARU UNTUK SEKRETARIS DIVISI
+        @JsonProperty("division_secretaries")
+        private List<LeaderInfo> divisionSecretaries;
+
+        private List<LeaderInfo> members;
     }
 }
